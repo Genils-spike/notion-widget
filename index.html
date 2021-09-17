@@ -1,8 +1,10 @@
 <html>
     <body>
-        <div>
-            coucou
-        </div>
+        <script>
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            console.log(urlParams.get('text'));
+        </script>
         <style>
             body, html{
                 background-color: #2f3437;
@@ -11,5 +13,8 @@
                 color:white;
             }
         </style>
+        <div>
+            coucou
+        </div>
     </body>
 </html>
