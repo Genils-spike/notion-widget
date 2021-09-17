@@ -1,23 +1,45 @@
 <html>
     <body>
-        <script>
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            console.log(urlParams.get('text'));
-        </script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
             body, html{
+                padding: 0;
+                margin: 0;
             }
             div{
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                padding-left: 10px;
                 background-color: #2f3437;
-                min-height: 75px;
+                font-size: 30px;
+                height: 45px;
                 color:white;
                 font-family: 'Megrim', cursive;
             }
+            span{
+                display: block;
+                text-shadow:
+                    0 0 7px #fff,
+                    0 0 10px #fff,
+                    0 0 21px #fff,
+                    0 0 42px white,
+                    0 0 82px white,
+                    0 0 92px white,
+                    0 0 102px white,
+                    0 0 151px white;
+            }
         </style>
         <div class=text>
-            coucou
+            <span id="text-container"></span>
         </div>
     </body>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const text = urlParams.get('text');
+        const textDiv = document.getElementById('text-container');
+        console.log(textDiv);
+        textDiv.innerHTML = text;
+    </script>
 </html>
